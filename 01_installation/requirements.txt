@@ -1,0 +1,3 @@
+# Full project (data prep + ML). Prefer: bash scripts/setup.sh
+-r requirements-ml.txt
+pyreadstat>=1.2

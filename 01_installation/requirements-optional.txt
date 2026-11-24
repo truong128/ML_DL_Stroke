@@ -1,0 +1,8 @@
+# Optional extras
+# Pipelines 5 & 6 (knowledge graph)
+networkx>=3.2
+pyvis>=0.3.2
+# Manuscript tables (.docx) in 06_posthoc/make_manuscript_figures.py
+python-docx>=1.1
+# Pipeline 7 (deep learning) — install PyTorch for your CUDA version, e.g.:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128

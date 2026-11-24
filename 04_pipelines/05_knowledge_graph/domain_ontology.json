@@ -1,0 +1,86 @@
+{
+  "categories": {
+    "cognitive_function": {
+      "label": "Cognitive / functional limitation",
+      "features": [
+        "difficulty_deciding",
+        "difficulty_walking",
+        "difficulty_alone",
+        "blind"
+      ],
+      "stroke_prior_weight": 0.85
+    },
+    "mental_health": {
+      "label": "Mental health",
+      "features": [
+        "depression_disorder",
+        "mental_health_days"
+      ],
+      "stroke_prior_weight": 0.65
+    },
+    "physical_health": {
+      "label": "Physical health status",
+      "features": [
+        "general_health",
+        "physical_health_days",
+        "bmi_category"
+      ],
+      "stroke_prior_weight": 0.55
+    },
+    "chronic_disease": {
+      "label": "Chronic conditions",
+      "features": [
+        "arthritis",
+        "arthritis_disability",
+        "diabetes",
+        "prediabetes",
+        "copd",
+        "heart_disease",
+        "high_blood_pressure",
+        "asthma_now",
+        "asthma_ever"
+      ],
+      "stroke_prior_weight": 0.50
+    },
+    "healthcare_access": {
+      "label": "Healthcare access",
+      "features": [
+        "has_coverage",
+        "cost_barrier",
+        "routine_checkup",
+        "bp_meds"
+      ],
+      "stroke_prior_weight": 0.35
+    },
+    "demographics": {
+      "label": "Demographics",
+      "features": [
+        "sex",
+        "age_group",
+        "hispanic",
+        "education",
+        "marital_status",
+        "veteran"
+      ],
+      "stroke_prior_weight": 0.40
+    },
+    "lifestyle": {
+      "label": "Lifestyle / prevention",
+      "features": [
+        "smoked_100",
+        "smoke_days",
+        "avg_drinks",
+        "flu_shot",
+        "pneumonia_vax"
+      ],
+      "stroke_prior_weight": 0.30
+    }
+  },
+  "directed_priors": [
+    {"source": "depression_disorder", "target": "mental_health_days", "weight": 0.45, "relation": "comorbidity"},
+    {"source": "general_health", "target": "physical_health_days", "weight": 0.40, "relation": "correlates"},
+    {"source": "arthritis", "target": "difficulty_walking", "weight": 0.35, "relation": "functional_limitation"},
+    {"source": "difficulty_walking", "target": "difficulty_alone", "weight": 0.35, "relation": "functional_limitation"},
+    {"source": "mental_health_days", "target": "difficulty_deciding", "weight": 0.25, "relation": "cognitive_complaint"}
+  ]
+}
